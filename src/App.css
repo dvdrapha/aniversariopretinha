@@ -12,7 +12,7 @@
   max-width: 480px;
   border-radius: 1.5rem;
   padding: 1.75rem 1.5rem 2rem;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), rgba(236, 244, 255, 0.96));
+  background: #e6f0ff;
   box-shadow: 0 18px 40px rgba(4, 43, 94, 0.22);
   position: relative;
   backdrop-filter: blur(10px);
@@ -236,8 +236,9 @@
 .surprise-message-card {
   border-radius: 1rem;
   padding: 0.9rem 0.9rem 0.95rem;
-  background: linear-gradient(145deg, #dbe8ff, #f5f8ff);
-  box-shadow: 0 12px 26px rgba(10, 37, 80, 0.25);
+  background: #e6f0ff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: none;
 }
 
 .surprise-message-text {
