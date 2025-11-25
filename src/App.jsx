@@ -108,6 +108,8 @@ const galleryPhotos = [
     'trocamos-presentes-e-eu-fiquei-ali-do-seu-lado-enquanto-você-lia-16.05.23.jpg.jpeg',
     'extra',
   ),
+  createPhotoFromFilename('você-e-seu-cacto-19.10.25.jpeg', 'extra'),
+  createPhotoFromFilename('festa-de-hallowen-que-fomos-juntos-26.10.25.jpeg', 'extra'),
 ]
 
 const sortedGalleryPhotos = [...galleryPhotos].sort((a, b) => {
@@ -205,6 +207,20 @@ const timelineMoments = [
     title: 'Inaugurando a câmera do meu celular novo',
     text:
       'Inaugurar meu o celular novo com você foi ótimo, eu fiquei muito feliz por estar perto de você e aproveitando algo que conquistei.',
+  },
+  {
+    id: 'momento-13',
+    date: '19/10/2025',
+    title: 'Você e seu cacto',
+    text:
+      'Até com um cacto você consegue deixar tudo mais fofo.',
+  },
+  {
+    id: 'momento-14',
+    date: '26/10/2025',
+    title: 'Festa de Halloween juntos',
+    text:
+      'Na festa de Halloween, onde fomos combinando, teve muita resenha, risos, bebida e eu só conseguia pensar em como é bom viver essas noites diferentes ao seu lado.',
   },
 ]
 
