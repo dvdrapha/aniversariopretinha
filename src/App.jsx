@@ -226,9 +226,18 @@ const timelineMoments = [
 
 function App() {
   const [showSurprise, setShowSurprise] = useState(false)
+  const [selectedPhoto, setSelectedPhoto] = useState(null)
 
   const handleToggleSurprise = () => {
     setShowSurprise((prev) => !prev)
+  }
+
+  const handleOpenPhoto = (photo) => {
+    setSelectedPhoto(photo)
+  }
+
+  const handleClosePhoto = () => {
+    setSelectedPhoto(null)
   }
 
   return (
@@ -269,7 +278,11 @@ function App() {
           </p>
           <div className="gallery-grid">
             {sortedGalleryPhotos.map((photo) => (
-              <figure key={photo.id} className="gallery-card">
+              <figure
+                key={photo.id}
+                className="gallery-card"
+                onClick={() => handleOpenPhoto(photo)}
+              >
                 <div className="gallery-image-wrapper">
                   <img src={photo.src} alt={photo.title} className="gallery-image" />
                 </div>
@@ -340,6 +353,27 @@ function App() {
           </p>
         </footer>
       </main>
+
+      {selectedPhoto && (
+        <div
+          className="lightbox-overlay lightbox-overlay--visible"
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedPhoto.title}
+          onClick={handleClosePhoto}
+        >
+          <div className="lightbox-content" onClick={(event) => event.stopPropagation()}>
+            <img src={selectedPhoto.src} alt={selectedPhoto.title} className="lightbox-image" />
+            <div className="lightbox-caption">
+              <p className="lightbox-title">{selectedPhoto.title}</p>
+              <p className="lightbox-date">{selectedPhoto.description}</p>
+            </div>
+            <button type="button" className="lightbox-close" onClick={handleClosePhoto}>
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
